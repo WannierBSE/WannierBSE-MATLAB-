@@ -1,0 +1,9 @@
+% ==============================================================================
+% WANNIER TIGHT-BINDING (WTB) CONTROL
+% ==============================================================================
+
+% --- Band Index Selection -----------------------------------------------------
+% Define the active energy window for the Tight-Binding model.
+
+VBM = 14       % Valence Band Maximum (Topmost occupied band)
+CBM = 15       % Conduction Band Minimum (Lowest unoccupied band)

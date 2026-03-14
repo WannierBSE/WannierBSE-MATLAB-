@@ -1,0 +1,24 @@
+This file indicates i-th Wannier function centered at tau_{I}. Please refer to "begin atoms_cart" in wannier90.win for the order of tau_{I}. tau_{I} is the I-th line below "begin atoms_cart". ex:tau_{1} is the first line below "begin atoms_cart".
+   i     I 
+   1     2 
+   2     2 
+   3     2 
+   4     2 
+   5     2 
+   6     2 
+   7     3 
+   8     3 
+   9     3 
+  10     3
+  11     3 
+  12     3 
+  13     1 
+  14     1 
+  15     1 
+  16     1 
+  17     1 
+  18     1 
+  19     1 
+  20     1 
+  21     1 
+  22     1 

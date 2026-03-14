@@ -1,0 +1,14 @@
+This calculation was finished at 13-Mar-2026 16:37:17 
+ 
+-------------- k-points and bands and included in BSE --------------  
+number of k-points Nk = 3408 
+numbers of valence and conduction bands (Nv,Nc) = ( 2 , 2 ) 
+ 
+ 
+-------------- CPU usage -------------- 
+The number of cores used in the construction of BSE matrix = 6 
+ 
+-------------- Computation time -------------- 
+Computation time of constructing  BSE matrix  =        148.892 sec. 
+Computation time of diagonalizing BSE matrix  =        212.778 sec. 
+                      Total computation time  =        361.670 sec. 

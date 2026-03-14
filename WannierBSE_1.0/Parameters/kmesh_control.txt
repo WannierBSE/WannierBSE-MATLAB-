@@ -1,0 +1,18 @@
+% =============================================================================
+% GRID DEFINITION PARAMETERS
+% =============================================================================
+% Nk_coarse   : Defines the number of sampling intervals along the reciprocal
+%               basis vectors for the global Brillouin Zone.
+%
+% Nk_dense    : Specifies the number of sampling points within the  
+%               high-resolution regions for enhanced precision.
+%
+% Dense_range : Determines the spatial extent (in units of the coarse grid) 
+%               of the dense sampling zones centered at the high-symmetry
+%               K-points. 
+%               Note: Must satisfy [Dense_range <= Nk_coarse / 2].
+% =============================================================================
+
+Nk_coarse   = 9
+Nk_dense    = 12
+Dense_range = 3

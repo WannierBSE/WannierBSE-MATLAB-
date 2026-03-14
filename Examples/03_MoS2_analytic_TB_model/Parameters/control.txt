@@ -1,0 +1,14 @@
+% =========================================================================
+% BSE CONTROL PARAMETERS
+% =========================================================================
+
+% --- Physical Properties ---
+d              = 6.26       % 2D material thickness [Angstroms]
+
+% --- BSE Calculation Options ---
+NVAL           = 100        % Number of exciton eigenvalues to find
+Nc             = 1          % Conduction bands (Number of C*_BSE.txt files)
+Nv             = 1          % Valence bands    (Number of V*_BSE.txt files)
+
+% --- Parallelization ---
+Number_par     = 6          % Number of parallel threads
