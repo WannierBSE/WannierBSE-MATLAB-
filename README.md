@@ -3,7 +3,7 @@ WannierBSE
 🌐 Product Overview
 WannierBSE is a high-performance computational suite engineered for solving the Bethe-Salpeter 
 Equation (BSE) within the Wannier Tight-Binding (WTB) framework. Specifically optimized for 2D
-materials and heterostructures, WannierBSE bridges the gap between first-principles accuracy 
+materials, WannierBSE bridges the gap between first-principles accuracy 
 and model-scale efficiency.
 
 By leveraging MATLAB’s robust numerical engine, the package enables researchers to simulate 
