@@ -110,9 +110,9 @@ We gratefully acknowledge the support from the following organizations:
     <img src="pics/TRIAD LIGHT INNOVATION.svg" alt="TRIAD Logo" height="60" align="right">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="pics/NARLabs-Dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="pics/NARLabs.svg">
-    <img src="pics/NARLabs.svg" alt="NARLabs Logo" height="60">
+    <source media="(prefers-color-scheme: dark)" srcset="pics/NCHC-Dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="pics/NCHC-Light.svg">
+    <img src="pics/NCHC-Light.svg" alt="NCHC Logo" height="60">
   </picture>
 </div>
 <br clear="all">
