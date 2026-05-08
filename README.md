@@ -99,9 +99,21 @@ Developed by the research group of **Prof. Shun-Jen Cheng** at National Yang Min
 We gratefully acknowledge the support from the following organizations:
 
 <div align="center">
-  <img src="pics/NSTC.svg" alt="NSTC Logo" height="60" align="left">
-  <img src="pics/TRIAD LIGHT INNOVATION.svg" alt="TRIAD Logo" height="60" align="right">
-  <img src="pics/NARLabs.svg" alt="NARLabs Logo" height="60">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="pics/NSTC-Dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="pics/NSTC.svg">
+    <img src="pics/NSTC.svg" alt="NSTC Logo" height="60" align="left">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="pics/TRIAD LIGHT INNOVATION-Dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="pics/TRIAD LIGHT INNOVATION.svg">
+    <img src="pics/TRIAD LIGHT INNOVATION.svg" alt="TRIAD Logo" height="60" align="right">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="pics/NARLabs-Dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="pics/NARLabs.svg">
+    <img src="pics/NARLabs.svg" alt="NARLabs Logo" height="60">
+  </picture>
 </div>
 <br clear="all">
 
