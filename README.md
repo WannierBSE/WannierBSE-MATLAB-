@@ -1,23 +1,14 @@
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="pics/logo_dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="pics/logo_light.svg">
-    <img alt="WannierBSE Logo" src="pics/logo_dark.svg" width="700" height="auto">
-  </picture>
+  <img src="pics/logo_light.svg#gh-light-mode-only" alt="WannierBSE Logo" width="700" height="auto">
+  <img src="pics/logo_dark.svg#gh-dark-mode-only" alt="WannierBSE Logo" width="700" height="auto">
 
-  # WannierBSE: High-Performance Bethe-Salpeter Equation Solver
+# WannierBSE: High-Performance Bethe-Salpeter Equation Solver
 
-  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-  [![MATLAB](https://img.shields.io/badge/MATLAB-Supported-blue.svg)](https://www.mathworks.com/products/matlab.html)
-  [![GitHub Stars](https://img.shields.io/github/stars/WannierBSE/WannierBSE-MATLAB-?style=social)](https://github.com/WannierBSE/WannierBSE-MATLAB-)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![MATLAB](https://img.shields.io/badge/MATLAB-Supported-blue.svg)](https://www.mathworks.com/products/MATlab.html)
+[![GitHub Stars](https://img.shields.io/github/stars/WannierBSE/WannierBSE-MATLAB-?style=social)](https://github.com/WannierBSE/WannierBSE-MATLAB-)
 
-  [**What is WannierBSE?**](#what-is-wannierbse)
-  | [**Getting Started**](#getting-started)
-  | [**Technical Workflow**](#technical-workflow)
-  | [**Examples**](#examples)
-  | [**Citation**](#citation)
-  | [**Credits**](#credits)
-  | [**Supported By**](#supported-by)
+[**What is WannierBSE?**](#what-is-wannierbse) | [**Getting Started**](#getting-started) | [**Technical Workflow**](#technical-workflow) | [**Examples**](#examples) | [**Citation**](#citation) | [**Credits**](#credits) | [**Supported By**](#supported-by)
 </div>
 
 ---
@@ -99,21 +90,14 @@ Developed by the research group of **Prof. Shun-Jen Cheng** at National Yang Min
 We gratefully acknowledge the support from the following organizations:
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="pics/NSTC-Dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="pics/NSTC.svg">
-    <img src="pics/NSTC.svg" alt="NSTC Logo" height="60" align="left">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="pics/TRIAD LIGHT INNOVATION-Dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="pics/TRIAD LIGHT INNOVATION.svg">
-    <img src="pics/TRIAD LIGHT INNOVATION.svg" alt="TRIAD Logo" height="60" align="right">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="pics/NCHC-Dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="pics/NCHC-Light.svg">
-    <img src="pics/NCHC-Light.svg" alt="NCHC Logo" height="60">
-  </picture>
+  <img src="pics/NSTC-Light.webp#gh-light-mode-only" height="40" align="left">
+  <img src="pics/NSTC-Dark.webp#gh-dark-mode-only" height="40" align="left">
+  
+  <img src="pics/TRIAD%20LIGHT%20INNOVATION-Light.webp#gh-light-mode-only" height="45" align="right">
+  <img src="pics/TRIAD%20LIGHT%20INNOVATION-Dark.webp#gh-dark-mode-only" height="45" align="right">
+  
+  <img src="pics/NCHC-Light.webp#gh-light-mode-only" height="40">
+  <img src="pics/NCHC-Dark.webp#gh-dark-mode-only" height="40">
 </div>
 <br clear="all">
 
