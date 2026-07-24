@@ -13,11 +13,11 @@
 
 ---
 
-## What is WannierBSE?
+**WannierBSE** is a high-performance computational suite for solving the **Bethe–Salpeter Equation (BSE)** within a Wannier tight-binding framework. Specifically optimized  for two-dimensional materials, it combines first-principles electronic-structure accuracy with the efficiency of Wannier-based interpolation.
 
-**WannierBSE** is a high-performance computational suite engineered for solving the **Bethe-Salpeter Equation (BSE)** within the **Wannier Tight-Binding (WTB)** framework. Specifically optimized for 2D materials, WannierBSE bridges the gap between first-principles accuracy and model-scale efficiency.
+The general workflow begins with a density functional theory (DFT) calculation performed using Quantum ESPRESSO, VASP, or another first-principles code compatible with Wannier90. The DFT results are then processed with Wannier90 to construct a localized Wannier representation of the electronic structure. **WannierBSE** uses the generated Wannier Hamiltonian and related matrix elements to construct and solve the BSE.
 
-By leveraging MATLAB’s robust numerical engine, the package enables researchers to simulate excitonic spectra, dipoles, and light-matter interactions under complex dielectric environments.
+By leveraging MATLAB’s numerical capabilities, WannierBSE enables researchers to calculate exciton energies, excitonic wavefunctions, optical spectra, transition dipoles, and light–matter interactions in complex dielectric environments.
 
 ## Getting Started
 
