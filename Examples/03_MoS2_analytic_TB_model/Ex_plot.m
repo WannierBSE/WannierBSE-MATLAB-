@@ -17,13 +17,13 @@ clear; clc; close all;
 % -- File & Path Settings --
 config.dataPath     = 'Exciton_data';  % Folder containing the results
 config.dataFile     = 'Ex.mat';         % Input filename
-config.pdfOutput    = 'Ex_plot.pdf';    % Export filename (Vector)
 config.pngOutput    = 'Ex_plot.png';    % Export filename (Raster)
+%config.pdfOutput   = 'Ex_plot.pdf';    % Uncomment to export PDF (Vector)
 
 % -- Visual Styling --
 config.lineWidth    = 2.0;              % Thickness of energy level lines
-config.lineColor    = [0, 0, 1];        % RGB Color (Blue)
-config.fontSize     = 16;               % Base font size for ticks
+config.lineColor    = [0.1, 0.25, 0.60];        % RGB Color (Blue)
+config.fontSize     = 18;               % Base font size for ticks
 config.fontName     = 'Helvetica';      % Professional font face
 config.aspectRatio  = 2.8;              % Y/X ratio for the plot box
 
@@ -35,9 +35,10 @@ config.rightMargin  = 0.30;             % Buffer space for LaTeX labels (inches)
 %  2. DATA INITIALIZATION & LOADING
 %  ------------------------------------------------------------------------
 
-fprintf('>> Initializing Exciton Plotting Suite...\n');
+fprintf('\n>> Initializing Exciton Plotting Suite...\n');
 
-filePath = fullfile(config.dataPath, config.dataFile);
+scriptDir = fileparts(mfilename('fullpath'));
+filePath = fullfile(scriptDir, config.dataPath, config.dataFile);
 
 % Check for file existence - Abort if not found
 if ~exist(filePath, 'file')
@@ -79,7 +80,7 @@ ylabel(ax, '$\mathrm{Exciton\ energy}\ E^{X} \ \mathrm{(eV)}$', ...
 % Calculate Padding
 ylimits = ylim(ax);
 ylim_padding = (ylimits(2) - ylimits(1)) * 0.05; 
-ylim(ax, [ylimits(1) - ylim_padding, ylimits(2) + ylim_padding]);
+ylim(ax, [ylimits(1) - ylim_padding, max(Ex)]);
 
 % Final Axis Formatting
 set(ax, ...
@@ -96,9 +97,17 @@ set(ax, ...
 %  4. EXPORT & FILESYSTEM MANAGEMENT
 %  ------------------------------------------------------------------------
 
-% Prepare file paths
-pdfPath = fullfile(config.dataPath, config.pdfOutput);
-pngPath = fullfile(config.dataPath, config.pngOutput);
+% Prepare output directory and file paths
+outputRelativePath = fullfile(config.dataPath, 'Figures');
+outputDir = fullfile(scriptDir, outputRelativePath);
+if ~exist(outputDir, 'dir')
+    mkdir(outputDir);
+end
+
+pngPath = fullfile(outputDir, config.pngOutput);
+if isfield(config, 'pdfOutput') && ~isempty(config.pdfOutput)
+    pdfPath = fullfile(outputDir, config.pdfOutput);
+end
 
 % Tight Padding Logic
 set(ax, 'Units', 'normalized');
@@ -115,10 +124,13 @@ set(fig, 'PaperSize', [paperWidth, paperHeight]);
 
 % Output to Disk
 fprintf('>> Exporting publication-quality files...\n');
-print(fig, pdfPath, '-dpdf', '-painters'); 
 print(fig, pngPath, '-dpng', config.dpi); 
+if isfield(config, 'pdfOutput') && ~isempty(config.pdfOutput)
+    print(fig, pdfPath, '-dpdf', '-painters');
+end
 
-fprintf('>> Process Complete. Files saved to: %s\n', config.dataPath);
+fprintf('[Info] The Exciton energy spectrum was generated at %s\n', ...
+    outputRelativePath);
 % =========================================================================
 % END OF SCRIPT
 % =========================================================================

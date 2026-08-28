@@ -8,7 +8,7 @@
 [![MATLAB](https://img.shields.io/badge/MATLAB-Supported-blue.svg)](https://www.mathworks.com/products/MATlab.html)
 [![GitHub Stars](https://img.shields.io/github/stars/WannierBSE/WannierBSE-MATLAB-?style=social)](https://github.com/WannierBSE/WannierBSE-MATLAB-)
 
-[**What is WannierBSE?**](#what-is-wannierbse) | [**Getting Started**](#getting-started) | [**Technical Workflow**](#technical-workflow) | [**Examples**](#examples) | [**Citation**](#citation) | [**Credits**](#credits) | [**Supported By**](#supported-by)
+[**Getting Started**](#getting-started) | [**Technical Workflow**](#technical-workflow) | [**Examples**](#examples) | [**Citation**](#citation) | [**Credits**](#credits) | [**Supported By**](#supported-by)
 </div>
 
 ---
@@ -23,8 +23,8 @@ By leveraging MATLAB’s numerical capabilities, WannierBSE enables researchers 
 
 To get started with WannierBSE, please refer to our comprehensive documentation:
 
-*   [**User Guide (PDF)**](WannierBSE_v1.0_User_Guide.pdf) - Detailed technical manual and theory.
-*   [**QuickStart Guide (PDF)**](WannierBSE_v1.0_QuickStart_Guide.pdf) - Brief setup and first run instructions.
+*   [**User Guide (PDF)**](WannierBSE_v1.1_User_Guide.pdf) - Detailed technical manual and theory.
+*   [**QuickStart Guide (PDF)**](WannierBSE_v1.1_QuickStart_Guide.pdf) - Brief setup and first run instructions.
 *   [**Official Website**](https://quantum.web.nycu.edu.tw/wannierbse) - News and updates.
 
 ### Prerequisites
@@ -36,26 +36,28 @@ To get started with WannierBSE, please refer to our comprehensive documentation:
 WannierBSE features a modular data pipeline designed to handle both raw generation and pre-computed data ingestion.
 
 ### 1. Data Preparation
-Users can initiate calculations through two primary pathways:
+WannierBSE supports direct-interaction calculations and, in v1.1, calculations including short-range electron-hole exchange.
 
-> 🔄 **Generation Route:** Place `wannier90_hr.dat` in the `/User_input/` folder. The solver will automatically generate tight-binding bands, k-meshes, and dielectric functions, saving them in the `/Precomputed_data/` folder.
+> 🔄 **Direct-Interaction Route:** Users may either place `wannier90_hr.dat` in `/User_input/` and let WannierBSE generate the k-mesh and tight-binding bands internally, or provide a matched external dataset using `kmesh.txt` and `TB_data/` files such as `v*_TB.txt` and `c*_TB.txt`. Structural information is read from `structure.txt` or `wannier90.win` in `/User_input/`.
 > 
-> 📥 **Custom/Direct Route:** Import user-defined files (e.g., `v*_TB.txt`, `c*_TB.txt`, `kmesh.txt`) directly into `/User_input/` to bypass internal generation.
+> 📥 **Direct + Short-Range Exchange Route:** Exchange-enabled calculations require the internal Wannier90-based workflow. In addition to `wannier90_hr.dat`, users must provide real-space spinor Wannier functions in `/User_input/Wannier_functions_xsf/`, unless the required processed Wannier-function and exchange-interaction caches already exist in `/Precomputed_data/`.
+>
+> **Dielectric Input:** For both routes, users may provide `epsilon.txt` in `/User_input/`; otherwise WannierBSE generates or loads dielectric data from `/Precomputed_data/`.
 
 ### 2. Configuration & Control
 The simulation environment is governed by dedicated control files located in the `/Parameters/` directory:
-*   `control.txt` & `structure.txt`
-*   `WF_centers.txt` & `kmesh_control.txt`
-*   `WTB_control.txt` & `dielectric_control.txt`
+*   `control.txt`, `WTB_control.txt`, `WF_centers.txt`
+*   `kmesh_control.txt`, `dielectric_control.txt`
+*   `exchange_control.txt`
 
 ### 3. Execution & Visualization
 1.  **Core Solver:** Execute `WBSE.m` in MATLAB. The script utilizes an optimized, symmetry-aware Hamiltonian constructor and a high-performance parallelized solver.
-2.  **Post-Processing:** Use the auxiliary script `EX_plot.m` to visualize the exciton energy spectrum.
-3.  **Data Management:** All results, including energy spectra (`Ex.mat`) and wavefunctions (`A.mat`), are automatically saved in the `/Exciton_data/` folder.
+2.  **Post-Processing:** Use the auxiliary script `Ex_plot.m` to visualize the exciton energy spectrum.
+3.  **Data Management:** Main outputs, including energy spectra (`Ex.mat`) and wavefunctions (`A.mat`), are saved in the `/Exciton_data/` folder together with run-related output files.
 
 ## Examples
 
-To help you get started quickly, we provide several pre-configured examples in the repository. These include sample input files and parameters for typical 2D materials.
+To help you get started quickly, we provide several pre-configured examples in the repository. These include sample input files and parameters for direct-interaction and direct-plus-short-range-exchange workflows in typical 2D materials.
 
 📂 [**Browse Examples in the Repository**](https://github.com/WannierBSE/WannierBSE-MATLAB-/tree/main/Examples)
 
@@ -63,6 +65,12 @@ Each example includes:
 *   User input and precomputed data files
 *   Ready-to-use control parameter files
 *   Expected results.
+
+### Large Wannier90 Spinor Projection Files
+
+Examples 05, 06, and 07 use Wannier90 spinor projection files to reproduce the reported results. These files are not included in `WannierBSE_v1.1.zip` because of their size.
+
+To reproduce these examples, download `WannierBSE_v1.1_Wannier90_spinor_projections.zip` from the v1.1 GitHub Release and extract the `Wannier_functions_xsf` folder into the corresponding `User_input/` folder. The large precomputed `WF_up.mat` and `WF_down.mat` cache files for these examples are also provided as separate v1.1 release assets.
 
 ## Citation
 

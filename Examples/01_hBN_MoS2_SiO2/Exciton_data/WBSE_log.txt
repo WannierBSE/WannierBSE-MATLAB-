@@ -1,14 +1,22 @@
-This calculation was finished at 13-Mar-2026 16:06:30 
- 
--------------- k-points and bands and included in BSE --------------  
-number of k-points Nk = 3408 
-numbers of valence and conduction bands (Nv,Nc) = ( 2 , 2 ) 
- 
- 
--------------- CPU usage -------------- 
-The number of cores used in the construction of BSE matrix = 6 
- 
--------------- Computation time -------------- 
-Computation time of constructing  BSE matrix  =        141.018 sec. 
-Computation time of diagonalizing BSE matrix  =        222.497 sec. 
-                      Total computation time  =        363.514 sec. 
+WannierBSE calculation report
+Generated at: 2026-08-12 11:39:02
+
+==================== BSE BASIS ====================
+Number of k-points                            = Nk = 3942
+Valence bands used                            = Nv = 2
+Conduction bands used                         = Nc = 2
+
+==================== COULOMB INTERACTION ====================
+Short-range exchange interaction              = disabled
+
+==================== CPU USAGE ====================
+TB calculations                               Npar_TB                = 12
+rho calculation                               Npar_rho               = not used
+Exchange tensor calculation                   Npar_Xi                = not used
+BSE Hamiltonian construction                  Npar_HBSE              = 40
+
+==================== COMPUTATION TIME ====================
+BSE Hamiltonian matrix construction           =       60.767 sec
+BSE Hamiltonian diagonalization               =      608.515 sec
+Total BSE solver stage                        =      669.281 sec
+Total WBSE execution                          =      842.768 sec
